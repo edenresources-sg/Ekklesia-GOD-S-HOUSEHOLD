@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>God's Household 家的模式</title>
+<style>
+  :root {
+    --navy: #1E2761;
+    --navy-deep: #161d4d;
+    --ice: #CADCFC;
+    --gold: #C9A227;
+    --ink: #2B2B33;
+    --muted: #6B7280;
+    --card-bg: #F4F6FB;
+    --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.7;
+  }
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--white);
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before, .hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .hero::before { width: 420px; height: 420px; top: -180px; right: -120px; }
+  .hero::after { width: 320px; height: 320px; bottom: -160px; left: -100px; }
+  .hero-inner { position: relative; max-width: 880px; margin: 0 auto; }
+  .icon-badge {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: rgba(255,255,255,0.14);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.6rem;
+  }
+  .icon-badge svg { width: 34px; height: 34px; fill: var(--white); }
+  .eyebrow { letter-spacing: 0.25em; font-size: 0.85rem; color: var(--ice); margin-bottom: 0.6rem; }
+  h1.title { font-size: 3rem; margin: 0 0 0.6rem; font-weight: 700; }
+  .subtitle { font-size: 1.3rem; font-style: italic; color: var(--ice); margin-bottom: 2rem; }
+  .meta { font-size: 0.9rem; color: #9AA8D8; }
+
+  main { max-width: 880px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+  section { margin-bottom: 3rem; }
+  h2 {
+    color: var(--navy);
+    font-size: 1.6rem;
+    border-bottom: none;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 2rem; height: 2rem; border-radius: 50%;
+    background: var(--navy); color: var(--white);
+    font-size: 1rem; font-weight: 700; flex-shrink: 0;
+  }
+  p { margin: 0 0 1rem; }
+  .quote {
+    border-left: 4px solid var(--navy);
+    background: var(--card-bg);
+    padding: 1rem 1.4rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: #333;
+    border-radius: 0 8px 8px 0;
+  }
+  .quote.dark {
+    background: var(--navy);
+    color: var(--white);
+    border-left-color: var(--gold);
+  }
+  ul.clean { list-style: none; padding: 0; margin: 1rem 0; }
+  ul.clean li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 0.7rem;
+  }
+  ul.clean li::before {
+    content: "";
+    position: absolute; left: 0; top: 0.5em;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--gold);
+  }
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .compare .card {
+    padding: 1.4rem;
+    border-radius: 10px;
+  }
+  .compare .card.light { background: var(--card-bg); }
+  .compare .card.dark { background: var(--navy); color: var(--white); }
+  .compare .card h3 { margin-top: 0; font-size: 1.05rem; }
+  .compare .card.light h3 { color: var(--gold); }
+  .compare .card.dark h3 { color: var(--ice); }
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.2rem 0;
+  }
+  .stat-row .stat {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.1rem 1rem;
+  }
+  .stat-row .stat .label { font-size: 0.85rem; color: var(--muted); }
+  .stat-row .stat .value { font-size: 1.2rem; font-weight: 700; color: var(--navy); }
+  .closing {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-top: 2rem;
+  }
+  .closing .eng { color: var(--ice); font-size: 0.9rem; letter-spacing: 0.05em; margin-bottom: 0.8rem; }
+  .closing h2 { color: var(--white); justify-content: center; border: none; font-size: 1.8rem; }
+  .closing p { color: var(--ice); font-style: italic; }
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  @media (max-width: 640px) {
+    h1.title { font-size: 2.1rem; }
+    .compare, .stat-row { grid-template-columns: 1fr; }
+    .hero { padding: 3.5rem 1.5rem 3rem; }
+    main { padding: 2rem 1.2rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="icon-badge">
+      <svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
+    </div>
+    <div class="eyebrow">GOD'S HOUSEHOLD</div>
+    <h1 class="title">家的模式</h1>
+    <div class="subtitle">對抗巴比倫的解藥</div>
+    <div class="meta">260701 East Gate Tower 巴比倫 第五課 ｜ 喬治牧師 講述</div>
+  </div>
+</div>
+
+<main>
+
+  <section>
+    <h2><span class="num">1</span>為什麼需要「家」：兩種意念的拉扯</h2>
+    <p>喬治牧師以以利亞質問以色列「你們心持兩意要到幾時呢」為引子，指出今天有許多牧者，就像從前的他一樣，在「聖約的忠心」與「文化的迎合」之間搖擺不定——一邊仍傳講基督，一邊卻不知不覺滑入敬拜數字、名望、節目方案。</p>
+    <div class="quote">「你們心持兩意要到幾時呢？」——以利亞質問以色列（列王紀上18章）</div>
+    <p>COVID成了轉向的催化劑：疫情期間，超大型教會的建築、人數、預算、節目一夕之間全部失去意義。喬治牧師視之為神提醒教會該轉向「家」模式的記號。</p>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>要避免的陷阱：口號式的「小組式教會」</h2>
+    <p>喬治牧師以親身經歷提出警告：1990年代他參與的「Love Singapore」運動中，超大型教會曾提出「不是有小組的教會，而是小組式的教會」這句口號，理論上重心該轉往小組，但實際上主日大聚會依然是一切的中心——這是一次沒有真正發生的改變，只換了包裝、沒換實質。</p>
+    <div class="compare">
+      <div class="card light">
+        <h3>口號怎麼說</h3>
+        <p style="margin:0;font-style:italic;">「一切都應該圍繞著小組、小群體、家來運轉，不是圍繞著大型聚會。」</p>
+      </div>
+      <div class="card dark">
+        <h3>實際怎麼做</h3>
+        <p style="margin:0;font-style:italic;">「他們是這麼說的，但實際上做的卻不是這樣。到頭來，一切還是回歸到主日的大型聚會。」</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>聖經藍圖：使徒保羅的「家」模式</h2>
+    <ul class="clean">
+      <li><strong>六個月</strong> —— 保羅從不在同一座城市牧會超過六個月（哥林多18個月、以弗所3年為特例）。</li>
+      <li><strong>不建帝國</strong> —— 刻意避免建立自己的帝國、品牌，不做終身主任牧師。</li>
+      <li><strong>快速交棒</strong> —— 傳福音、做門訓、建立教會後迅速離開，前往下一座城市。</li>
+      <li><strong>眾教會之父</strong> —— 扮演眾教會之父的角色，蒙召建造的是神的國，不是巴比倫。</li>
+    </ul>
+    <div class="quote">「他被稱為眾教會之父，卻從未成為任何一間教會的終身主任牧師。」</div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>真實案例：一位選擇「家中聚會」的牧師</h2>
+    <p>三個月前，喬治牧師在新加坡巧遇一位牧養頗具規模教會的牧師。COVID後，這位牧師被主質問「要生產力（productivity），還是同在」，最終選擇向主說「是」。</p>
+    <div class="quote">「從現在起，我們將只在各自的家中聚會，不再在這個公共場所聚會。」</div>
+    <p>教會起初「大為震驚」，但他說明背後的心志——不願被生產力綁架，渴望生命圍繞神的同在——最終帶著會眾一起走上這條路。</p>
+    <div class="stat-row">
+      <div class="stat"><div class="label">每月一次</div><div class="value">全體大聚會</div></div>
+      <div class="stat"><div class="label">其餘每週</div><div class="value">分散在家中聚會</div></div>
+      <div class="stat"><div class="label">核心心志</div><div class="value">尋求神的同在</div></div>
+    </div>
+    <div class="quote">「家本身沒有魔力，關鍵是背後尋求神同在的心志。」</div>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span>「家」的核心：同在，不是形式</h2>
+    <p>喬治牧師以歷史上的多次大復興（第一、二、三次大覺醒等）為例：讓人們聚集的是神的同在，讓人們留下的也是神的同在，而復興之所以消退、熄滅，正是因為神的同在離開了。</p>
+    <div class="stat-row">
+      <div class="stat"><div class="label">帶來的</div><div class="value">神的同在</div></div>
+      <div class="stat"><div class="label">留住的</div><div class="value">神的同在</div></div>
+      <div class="stat"><div class="label">消退的原因</div><div class="value">同在的離開</div></div>
+    </div>
+    <div class="quote dark">如果只是換了聚會形式（從教堂搬到客廳），卻沒有真正尋求神的同在，仍舊會落回巴比倫的陷阱——形式不是重點，同在才是。</div>
+  </section>
+
+</main>
+
+<div class="closing">
+  <div class="eng">HOUSEHOLDS ARE THE ONLY ANTIDOTE TO BABYLON</div>
+  <h2>「家」是對抗巴比倫、巴力唯一的解藥</h2>
+  <p>唯有透過「家」，你我才能逃離巴力和巴比倫。</p>
+</div>
+
+</body>
+</html>
